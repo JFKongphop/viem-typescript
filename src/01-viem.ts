@@ -12,11 +12,11 @@ const publicClient = createPublicClient({
 })
 
 const account = privateKeyToAccount(process.env.PRIVATE_KEY as Address)
+console.log(account)
 
-
-publicClient.
-  getBalance({
-    address: account.address,
-}).then((data)  => console.log(formatEther(data)))
+// publicClient.
+//   getBalance({
+//     address: account.address,
+// }).then((data)  => console.log(formatEther(data)))
 
 

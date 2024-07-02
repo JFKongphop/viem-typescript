@@ -1,17 +1,17 @@
 1:
-	node dist/01-viem.js
+	ts-node src/01-viem.ts
 
 2:
-	node dist/02-viem.js
+	ts-node src/02-viem.ts
 
 3:
-	node dist/03-viem.js
+	ts-node src/03-viem.ts
 
 4:
-	node dist/04-viem.js
+	ts-node src/04-viem.ts
 
 5:
-	node dist/05-viem.js
+	ts-node src/05-viem.ts
 
 6:
-	node dist/06-viem.js
+	ts-node src/06-viem.ts
