@@ -1,22 +1,29 @@
 import dotenv from 'dotenv';
-import { Address, createPublicClient, http, formatEther } from 'viem'
-import { holesky } from 'viem/chains'
-import { privateKeyToAccount } from 'viem/accounts'
+import { 
+  createPublicClient, 
+  http, 
+} from 'viem';
+import { 
+  generatePrivateKey, 
+  privateKeyToAccount 
+} from 'viem/accounts';
+import { mainnet } from 'viem/chains';
 
- 
 dotenv.config();
 
 const publicClient = createPublicClient({ 
-  chain: holesky,
+  chain: mainnet,
   transport: http()
 })
 
-const account = privateKeyToAccount(process.env.PRIVATE_KEY as Address)
-console.log(account)
+async function init() {
+  const blockNumber = Number(await publicClient.getBlockNumber());
+  console.log(blockNumber);
+  
+  const privateKey = generatePrivateKey();
+  const account = privateKeyToAccount(privateKey);
 
-// publicClient.
-//   getBalance({
-//     address: account.address,
-// }).then((data)  => console.log(formatEther(data)))
+  console.log(account);
+}
 
-
+init();
