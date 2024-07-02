@@ -1,4 +1,3 @@
-import dotenv from 'dotenv';
 import { 
   createPublicClient, 
   http, 
@@ -8,8 +7,6 @@ import {
   privateKeyToAccount 
 } from 'viem/accounts';
 import { mainnet } from 'viem/chains';
-
-dotenv.config();
 
 const publicClient = createPublicClient({ 
   chain: mainnet,
